@@ -1,3 +1,68 @@
 
 $> git init //initializes new git repository
 $> git status //see current status of git
+
+
+What happens when you initialize a repository? Why do you need to do it?
+	It creates a hidden file which Git uses to track the various files and changes to those files. Unless we have that, how do we really keep track of these things? Its a necessary first step.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+	The working directory is the directory you have your current files in. You are still in the process of making changes to these files.
+	Once you are done with a file, you shift it to the staging area using git add. This is the stage before you finally submit to a commit. This is because one update may need changes to multiple files or you may have a need to update only specific files you have changed into one commit and another in a different commit. Or you may have multiple files which you need to commit for one change.
+	The repository is the final set of changes for that specific commit as well as all the preceding commits. it is a library of all commits.
+	
+$> git diff //with no arguments gives working directory and staging differences
+$> git diff --staged //this compares stagine area with most recent commit
+$> git reset --hard //this reset working directory and staging area and removes any changes
+
+How can you use the staging area to make sure you have one commit per logical change?
+	 One bug fix or element is added, all files related to that are added to staging and once that element is done, the commit is made. multiple features should utilise multiple commits.
+	 
+$>git branch //shows current branches
+$>git branch name123 //creates new branch called name
+$>git checkout name123 //checkout branch name123
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+	Can do experiments, different language versions, different type of devices versions, and so on an so forth. That way each version with its intended value works perfectly without affecting the other versions.
+
+$> git log --graph branch1 branch2 //compare two branches graphically
+$> git log --graph --oneline branch1 branch2 //  oneline makes it shorter and easy 
+$> git checkout -b newbranch //creates new branch and checks it out
+
+How do the diagrams help you visualize the branch structure?
+	It gives a graphical overview of the history of changes and the various diversions you might have taken. This helps to give a map of the progress of the entire project.
+	
+$> git merge branch1 branch2 //merges two branches with new name as branch1
+$> git branch -d coins //deletes only label of coins branch
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+	Merging two branches combines two separate sets of code into one unified set using the split off point as a method to check what to keep/discard. We represent it the way we do as it shows the history of the process of the code.
+	
+
+	* master
+*\
+| shipsoncoins
+| coin collection
+| helper fru
+| first coins commit
+| /COINS
+*revertcotnrols
+*
+*
+
+$>git merge master easy-mode //will cause conflict
+$> edit game.js //find "<<<<<<" will show conflicts. <<<<shows easy-mode changes, >>>> shows master changes, |||||| shows original
+//resolve conflict and save
+$> git status
+$> git add file.x
+$> git commit //finally merges
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	Automerging is a timesaver. If code is reasonably sound then one can automerge and save a ton of time. Manual saving is more granular but time consuming and tedious. This must be taken into account.
+
+
+
+
+
+  
