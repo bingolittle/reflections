@@ -1,0 +1,3 @@
+
+$> git init //initializes new git repository
+$> git status //see current status of git
