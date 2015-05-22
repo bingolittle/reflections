@@ -1,0 +1,9 @@
+
+
+$> git log file.xxx // See Logs
+>q //quit to prompt
+$> git diff file_ID1 file_ID2 //see differences in one to next. Windows equivalent is FC, Unix is Diff
+$> git checkout IDx //sets repository to IDx
+$> git add file.xxx //adds file to repository
+$> git commit //commits repository
+
